@@ -1,0 +1,137 @@
+import Autoplay from "embla-carousel-autoplay";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
+import { motion } from "framer-motion";
+import hero1 from "@/assets/hero-1.png";
+import hero2 from "@/assets/hero-2.png";
+import hero3 from "@/assets/hero-3.png";
+
+export default function Home() {
+  const slides = [
+    {
+      image: hero1,
+      title: "WE ARE WORLDWIDE",
+      subtitle: "More than a team. We are a movement.",
+      cta: "Join the Squad",
+      link: "/register"
+    },
+    {
+      image: hero2,
+      title: "PLAY WITH PASSION",
+      subtitle: "Compete at the highest level in our regional leagues.",
+      cta: "See Schedule",
+      link: "/contact"
+    },
+    {
+      image: hero3,
+      title: "TRAIN LIKE A PRO",
+      subtitle: "Professional coaching staff dedicated to your development.",
+      cta: "About Us",
+      link: "/about"
+    }
+  ];
+
+  return (
+    <div className="min-h-screen bg-background flex flex-col">
+      {/* Hero Carousel */}
+      <section className="relative w-full h-[80vh] bg-black">
+        <Carousel
+          className="w-full h-full"
+          plugins={[Autoplay({ delay: 5000 })]}
+          opts={{ loop: true }}
+        >
+          <CarouselContent className="h-full">
+            {slides.map((slide, index) => (
+              <CarouselItem key={index} className="relative w-full h-[80vh]">
+                <div className="absolute inset-0 bg-black/40 z-10" />
+                <div 
+                  className="absolute inset-0 bg-cover bg-center"
+                  style={{ backgroundImage: `url(${slide.image})` }}
+                />
+                <div className="relative z-20 container mx-auto h-full flex flex-col justify-center items-center text-center px-4">
+                  <motion.h1 
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.2, duration: 0.8 }}
+                    className="text-6xl md:text-8xl lg:text-9xl font-heading font-black text-white italic tracking-tighter uppercase drop-shadow-xl"
+                  >
+                    {slide.title}
+                  </motion.h1>
+                  <motion.p 
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.4, duration: 0.8 }}
+                    className="text-xl md:text-2xl text-white/90 max-w-2xl mt-4 mb-8 font-medium drop-shadow-md"
+                  >
+                    {slide.subtitle}
+                  </motion.p>
+                  <motion.div
+                    initial={{ y: 20, opacity: 0 }}
+                    animate={{ y: 0, opacity: 1 }}
+                    transition={{ delay: 0.6, duration: 0.8 }}
+                  >
+                    <Link href={slide.link}>
+                      <Button size="lg" className="bg-accent text-accent-foreground hover:bg-white hover:text-primary text-lg px-8 py-6 font-heading font-bold uppercase tracking-wider transition-all transform hover:scale-105 shadow-xl border-2 border-transparent hover:border-white">
+                        {slide.cta}
+                      </Button>
+                    </Link>
+                  </motion.div>
+                </div>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="hidden md:block">
+             <CarouselPrevious className="left-4 bg-white/10 hover:bg-white/20 border-none text-white" />
+             <CarouselNext className="right-4 bg-white/10 hover:bg-white/20 border-none text-white" />
+          </div>
+        </Carousel>
+      </section>
+
+      {/* Intro Section */}
+      <section className="py-24 bg-white">
+        <div className="container mx-auto px-4 text-center">
+          <span className="text-accent font-bold tracking-widest uppercase mb-4 block">Welcome to the Club</span>
+          <h2 className="text-5xl md:text-6xl font-heading font-bold text-primary mb-8 uppercase italic">
+            The World's Game, <br/>Played Locally
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-12">
+            Worldwide FC is dedicated to bringing together players from all backgrounds to compete, grow, and celebrate the beautiful game. Whether you're a seasoned pro or looking to join your first competitive team, there's a place for you here.
+          </p>
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="p-8 bg-muted hover:bg-primary hover:text-white transition-colors group">
+              <h3 className="text-3xl font-heading font-bold mb-4 uppercase italic">Elite Training</h3>
+              <p className="group-hover:text-white/80">Access to professional coaching, modern facilities, and rigorous development programs.</p>
+            </div>
+            <div className="p-8 bg-muted hover:bg-primary hover:text-white transition-colors group">
+              <h3 className="text-3xl font-heading font-bold mb-4 uppercase italic">Global Community</h3>
+              <p className="group-hover:text-white/80">Join a diverse squad representing over 20 different nationalities united by football.</p>
+            </div>
+            <div className="p-8 bg-muted hover:bg-primary hover:text-white transition-colors group">
+              <h3 className="text-3xl font-heading font-bold mb-4 uppercase italic">Competitive Play</h3>
+              <p className="group-hover:text-white/80">Regular matches, league play, and tournaments to test your skills against the best.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80')] opacity-10 bg-cover bg-center fixed"></div>
+        <div className="container mx-auto px-4 relative z-10 text-center">
+          <h2 className="text-6xl md:text-8xl font-heading font-black uppercase italic mb-8 text-white">
+            Ready to <span className="text-accent">Play?</span>
+          </h2>
+          <p className="text-2xl text-white/80 mb-10 max-w-2xl mx-auto">
+            Registration for the upcoming season is now open. Don't miss your chance to be part of the legacy.
+          </p>
+          <Link href="/register">
+            <Button size="lg" className="bg-accent text-accent-foreground hover:bg-white hover:text-primary text-xl px-12 py-8 font-heading font-bold uppercase tracking-widest shadow-2xl transition-transform hover:scale-105">
+              Enter Registration Request
+            </Button>
+          </Link>
+        </div>
+      </section>
+    </div>
+  );
+}
