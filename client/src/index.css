@@ -47,7 +47,7 @@
   --popover-foreground: 222 47% 11%;
 
   --primary: 222 47% 11%; /* Navy Blue */
-  --primary-foreground: 48 96% 53%; /* Gold Text */
+  --primary-foreground: 0 72% 35%; /* Dark Red Text */
 
   --secondary: 210 20% 90%; /* Light Blue/Grey */
   --secondary-foreground: 222 47% 11%;
@@ -55,8 +55,8 @@
   --muted: 210 40% 96.1%;
   --muted-foreground: 215.4 16.3% 46.9%;
 
-  --accent: 48 96% 53%; /* Electric Gold */
-  --accent-foreground: 222 47% 11%; /* Navy Text on Gold */
+  --accent: 0 72% 35%; /* Dark Red */
+  --accent-foreground: 210 40% 98%; /* White Text on Red */
 
   --destructive: 0 84.2% 60.2%;
   --destructive-foreground: 210 40% 98%;
@@ -78,8 +78,8 @@
   --popover: 222 47% 13%;
   --popover-foreground: 210 40% 98%;
 
-  --primary: 48 96% 53%; /* Gold in Dark Mode */
-  --primary-foreground: 222 47% 11%;
+  --primary: 0 72% 45%; /* Red in Dark Mode */
+  --primary-foreground: 210 40% 98%;
 
   --secondary: 217.2 32.6% 17.5%;
   --secondary-foreground: 210 40% 98%;
@@ -87,8 +87,8 @@
   --muted: 217.2 32.6% 17.5%;
   --muted-foreground: 215 20.2% 65.1%;
 
-  --accent: 48 96% 53%;
-  --accent-foreground: 222 47% 11%;
+  --accent: 0 72% 45%;
+  --accent-foreground: 210 40% 98%;
 
   --destructive: 0 62.8% 30.6%;
   --destructive-foreground: 210 40% 98%;
