@@ -13,7 +13,7 @@ export default function Home() {
     {
       image: indoor,
       title: "WE ARE WORLDWIDE FC",
-      subtitle: "More than a team. We are a movement.",
+      subtitle: "A team where no player is bigger than the club.",
       cta: "Join the Squad",
       link: "/register"
     },
@@ -40,7 +40,7 @@ export default function Home() {
       <section className="relative w-full h-[80vh] bg-black">
         <Carousel
           className="w-full h-full"
-          plugins={[Autoplay({ delay: 5000 })]}
+          plugins={[Autoplay({ delay: 5000, stopOnInteraction: true })]}
           opts={{ loop: true }}
         >
           <CarouselContent className="h-full">
