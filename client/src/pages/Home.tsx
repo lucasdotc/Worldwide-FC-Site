@@ -3,29 +3,30 @@ import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
-import hero1 from "@/assets/hero-1.png";
-import hero2 from "@/assets/hero-2.png";
-import hero3 from "@/assets/hero-3.png";
+import indoor from "@/assets/indoor.jpeg"
+import outdoor from "@/assets/outdoor.jpeg"
+import vini from "@/assets/vini.jpeg"
 
 export default function Home() {
+  
   const slides = [
     {
-      image: hero1,
-      title: "WE ARE WORLDWIDE",
+      image: indoor,
+      title: "WE ARE WORLDWIDE FC",
       subtitle: "More than a team. We are a movement.",
       cta: "Join the Squad",
       link: "/register"
     },
     {
-      image: hero2,
+      image: outdoor,
       title: "PLAY WITH PASSION",
-      subtitle: "Compete at the highest level in our regional leagues.",
+      subtitle: "Compete at various levels in our regional leagues.",
       cta: "See Schedule",
       link: "/contact"
     },
     {
-      image: hero3,
-      title: "TRAIN LIKE A PRO",
+      image: vini,
+      title: "REACH YOUR FULL POTENTIAL",
       subtitle: "Professional coaching staff dedicated to your development.",
       cta: "About Us",
       link: "/about"
@@ -33,6 +34,7 @@ export default function Home() {
   ];
 
   return (
+    
     <div className="min-h-screen bg-background flex flex-col">
       {/* Hero Carousel */}
       <section className="relative w-full h-[80vh] bg-black">
@@ -46,8 +48,10 @@ export default function Home() {
               <CarouselItem key={index} className="relative w-full h-[80vh]">
                 <div className="absolute inset-0 bg-black/40 z-10" />
                 <div 
-                  className="absolute inset-0 bg-cover bg-center"
-                  style={{ backgroundImage: `url(${slide.image})` }}
+                  className="absolute inset-0 bg-cover"
+                  style={{
+                    backgroundImage: `url(${slide.image})`,
+                    backgroundPosition: "center 70%",}}
                 />
                 <div className="relative z-20 container mx-auto h-full flex flex-col justify-center items-center text-center px-4">
                   <motion.h1 
@@ -101,15 +105,15 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="p-8 bg-muted hover:bg-primary hover:text-white transition-colors group">
               <h3 className="text-3xl font-heading font-bold mb-4 uppercase italic">Elite Training</h3>
-              <p className="group-hover:text-white/80">Access to professional coaching, modern facilities, and rigorous development programs.</p>
+              <p className="group-hover:text-white/80">Access to professional coaching, frequent training, and personal development programs.</p>
             </div>
             <div className="p-8 bg-muted hover:bg-primary hover:text-white transition-colors group">
               <h3 className="text-3xl font-heading font-bold mb-4 uppercase italic">Global Community</h3>
-              <p className="group-hover:text-white/80">Join a diverse squad representing over 20 different nationalities united by football.</p>
+              <p className="group-hover:text-white/80">Join a diverse squad of players from around the globe united by football.</p>
             </div>
             <div className="p-8 bg-muted hover:bg-primary hover:text-white transition-colors group">
               <h3 className="text-3xl font-heading font-bold mb-4 uppercase italic">Competitive Play</h3>
-              <p className="group-hover:text-white/80">Regular matches, league play, and tournaments to test your skills against the best.</p>
+              <p className="group-hover:text-white/80">Weekly matches, league play, and tournaments to test your skills against the best.</p>
             </div>
           </div>
         </div>

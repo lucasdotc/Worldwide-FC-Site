@@ -72,7 +72,7 @@ export default function Register() {
                   <FormItem>
                     <FormLabel className="uppercase font-bold tracking-wide">Full Name</FormLabel>
                     <FormControl>
-                      <Input placeholder="Lionel Messi" {...field} className="bg-muted/30 border-2 focus-visible:ring-primary" />
+                      <Input placeholder="John Doe" {...field} className="bg-muted/30 border-2 focus-visible:ring-primary" />
                     </FormControl>
                     <FormMessage />
                   </FormItem>
@@ -87,7 +87,7 @@ export default function Register() {
                     <FormItem>
                       <FormLabel className="uppercase font-bold tracking-wide">Email</FormLabel>
                       <FormControl>
-                        <Input placeholder="leo@example.com" {...field} className="bg-muted/30 border-2 focus-visible:ring-primary" />
+                        <Input placeholder="john@example.com" {...field} className="bg-muted/30 border-2 focus-visible:ring-primary" />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -161,7 +161,7 @@ export default function Register() {
                       />
                     </FormControl>
                     <FormDescription>
-                      Optional: Brief overview of your soccer career.
+                      Brief overview of your soccer career.
                     </FormDescription>
                     <FormMessage />
                   </FormItem>

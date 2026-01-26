@@ -6,10 +6,10 @@ export function Footer() {
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="font-heading text-3xl font-bold uppercase italic">
-              Worldwide<span className="text-accent">FC</span>
+              Worldwide<span className="text-accent"> FC</span>
             </h3>
             <p className="text-primary-foreground/70 max-w-xs mx-auto md:mx-0">
-              Uniting players from across the globe through the beautiful game. Professional training, competitive matches, and a family atmosphere.
+              Uniting players from across the globe through the beautiful game. Technical and tactical training, competitive matches, and a family atmosphere.
             </p>
           </div>
 
@@ -28,9 +28,9 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-heading text-xl font-bold uppercase tracking-wide text-accent">Get in Touch</h4>
             <ul className="space-y-2 text-primary-foreground/70">
-              <li>info@worldwidefc.com</li>
-              <li>+1 (555) 123-4567</li>
-              <li>Los Angeles, CA</li>
+              <li>coachlucas@worldwidefc.com</li>
+              <li>+1 (587) 500-4823</li>
+              <li>Calgary, AB</li>
             </ul>
             <div className="flex justify-center md:justify-start gap-4 pt-2">
                {/* Icons could go here again if needed */}

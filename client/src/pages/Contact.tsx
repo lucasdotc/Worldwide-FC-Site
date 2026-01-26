@@ -1,4 +1,5 @@
-import { MapPin, Mail, Phone, Clock } from "lucide-react";
+import { Mail} from "lucide-react";
+import { ImWhatsapp } from "react-icons/im";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -19,13 +20,6 @@ export default function Contact() {
             <h2 className="text-3xl font-heading font-bold text-primary mb-8 uppercase italic">Get in Touch</h2>
             <div className="space-y-8">
               <div className="flex items-start gap-4">
-                <div className="bg-accent/10 p-3 rounded-full text-primary">
-                  <MapPin size={24} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg uppercase">Home Ground</h3>
-                  <p className="text-muted-foreground">123 Soccer Way<br/>Los Angeles, CA 90001</p>
-                </div>
               </div>
               
               <div className="flex items-start gap-4">
@@ -34,29 +28,21 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg uppercase">Email</h3>
-                  <p className="text-muted-foreground">info@worldwidefc.com<br/>recruitment@worldwidefc.com</p>
+                  <p className="text-muted-foreground">philliphanoski@worldwidefc.com<br/>tomasmonroy@worldwidefc.com<br/>coachlucas@worldwidefc.com</p>
                 </div>
               </div>
 
               <div className="flex items-start gap-4">
                 <div className="bg-accent/10 p-3 rounded-full text-primary">
-                  <Phone size={24} />
+                  <ImWhatsapp size={24} />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg uppercase">Phone & WhatsApp</h3>
-                  <p className="text-muted-foreground">+1 (555) 123-4567</p>
+                  <h3 className="font-bold text-lg uppercase">WhatsApp</h3>
+                  <p className="text-muted-foreground">+1 (587) 500-4823</p>
                 </div>
               </div>
 
-              <div className="flex items-start gap-4">
-                <div className="bg-accent/10 p-3 rounded-full text-primary">
-                  <Clock size={24} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg uppercase">Office Hours</h3>
-                  <p className="text-muted-foreground">Mon - Fri: 9am - 5pm<br/>Sat: 10am - 2pm</p>
-                </div>
-              </div>
+              
             </div>
 
             {/* Map Placeholder */}

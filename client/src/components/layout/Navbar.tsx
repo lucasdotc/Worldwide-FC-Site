@@ -1,5 +1,6 @@
 import { Link, useLocation } from "wouter";
 import { Menu, X, Instagram, Phone } from "lucide-react";
+import { ImWhatsapp } from "react-icons/im";
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -56,9 +57,9 @@ export function Navbar() {
             rel="noreferrer"
             className="text-primary-foreground/80 hover:text-accent transition-colors"
           >
-            <Phone size={20} />
+            <ImWhatsapp size={20} />
           </a>
-          <Link href="/register">
+          <Link href="https://wa.link/nv42mi">
             <Button variant="default" className="bg-accent text-accent-foreground hover:bg-white hover:text-primary font-bold uppercase tracking-wider">
               Join the Team
             </Button>

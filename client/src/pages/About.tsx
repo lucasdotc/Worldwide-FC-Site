@@ -16,7 +16,7 @@ export default function About() {
             About <span className="text-accent">Us</span>
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto font-medium">
-            Building champions on and off the pitch since 2015.
+            Building champions on and off the pitch since 2025.
           </p>
         </div>
       </div>
@@ -31,17 +31,17 @@ export default function About() {
           >
             <span className="text-accent font-bold tracking-widest uppercase mb-2 block">Our Story</span>
             <h2 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6 uppercase italic">
-              From Local Fields to Global Ambitions
+              From Streets to Global Ambitions
             </h2>
             <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
               <p>
-                Worldwide FC was founded with a simple yet powerful mission: to create a soccer club that transcends borders. What started as a small group of friends playing weekend pickup games has evolved into a premier competitive organization.
+                Worldwide FC was founded by Phillip Hanoski and Tomas Monroy, two friends with a simple yet powerful mission: to create a soccer club that competes at high levels, transcends borders, and cultivates a family. What started as a small group of friends who played together in their childhood has evolved into a premier competitive organization with multiple teams and players from all over the world.
               </p>
               <p>
                 We believe that football is a universal language. Our club brings together players from diverse backgrounds, cultures, and playing styles to create a unique and dynamic brand of football that is exciting to watch and difficult to play against.
               </p>
               <p>
-                Today, we compete in top regional leagues, offering development pathways for players of all ages and skill levels. We are not just a team; we are a family united by our love for the game.
+                Today, we compete in Calgary's most competitive league, CUSA, offering development pathways for players of all skill levels. We are not just a team; we are a family united by our love of the game.
               </p>
             </div>
           </motion.div>
@@ -53,12 +53,12 @@ export default function About() {
           >
             <div className="bg-muted p-8 text-center rounded-sm hover:shadow-lg transition-shadow">
               <Trophy className="w-12 h-12 text-accent mx-auto mb-4" />
-              <h3 className="font-heading text-4xl font-bold text-primary">15+</h3>
-              <p className="text-sm uppercase tracking-wide font-bold text-muted-foreground">Trophies Won</p>
+              <h3 className="font-heading text-4xl font-bold text-primary">2</h3>
+              <p className="text-sm uppercase tracking-wide font-bold text-muted-foreground">Seasons Played</p>
             </div>
             <div className="bg-muted p-8 text-center rounded-sm hover:shadow-lg transition-shadow">
               <Users className="w-12 h-12 text-accent mx-auto mb-4" />
-              <h3 className="font-heading text-4xl font-bold text-primary">200+</h3>
+              <h3 className="font-heading text-4xl font-bold text-primary">40+</h3>
               <p className="text-sm uppercase tracking-wide font-bold text-muted-foreground">Active Players</p>
             </div>
             <div className="bg-muted p-8 text-center rounded-sm hover:shadow-lg transition-shadow">
