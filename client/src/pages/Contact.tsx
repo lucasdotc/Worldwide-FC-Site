@@ -45,10 +45,11 @@ export default function Contact() {
               
             </div>
 
-            {/* Map Placeholder */}
+            {/* Map Placeholder - Temporarily disabled
             <div className="mt-12 h-64 bg-muted w-full rounded-sm flex items-center justify-center border-2 border-border">
               <span className="text-muted-foreground font-heading uppercase font-bold text-xl">Map Integration Placeholder</span>
             </div>
+            */}
           </div>
 
           {/* Form */}
