@@ -11,6 +11,7 @@ import FAQ from "@/pages/FAQ";
 import Register from "@/pages/Register";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 function Router() {
   return (
@@ -30,6 +31,7 @@ function App() {
     <QueryClientProvider client={queryClient}>
       <TooltipProvider>
         <div className="flex min-h-screen flex-col font-sans">
+          <ScrollToTop />
           <Navbar />
           <div className="flex-1">
             <Router />

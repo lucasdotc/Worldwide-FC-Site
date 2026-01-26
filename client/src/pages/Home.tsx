@@ -8,7 +8,7 @@ import outdoor from "@/assets/outdoor.jpeg"
 import vini from "@/assets/vini.jpeg"
 
 export default function Home() {
-  
+
   const slides = [
     {
       image: indoor,
@@ -22,7 +22,7 @@ export default function Home() {
       title: "PLAY WITH PASSION",
       subtitle: "Compete at various levels in our regional leagues.",
       cta: "See Schedule",
-      link: "/contact"
+      link: "https://www.cusa.ab.ca/team/12964/1049/11493/343291"
     },
     {
       image: vini,
@@ -34,28 +34,28 @@ export default function Home() {
   ];
 
   return (
-    
+
     <div className="min-h-screen bg-background flex flex-col">
       {/* Hero Carousel */}
       <section className="relative w-full h-[80vh] bg-black">
         <Carousel
           className="w-full h-full"
-          plugins={[Autoplay({ delay: 5000, stopOnInteraction: true })]}
+          plugins={[Autoplay({ delay: 8000, stopOnInteraction: true })]}
           opts={{ loop: true }}
         >
           <CarouselContent className="h-full">
             {slides.map((slide, index) => (
               <CarouselItem key={index} className="relative w-full h-[80vh]">
                 <div className="absolute inset-0 bg-black/40 z-10" />
-                <div 
+                <div
                   className="absolute inset-0 bg-cover"
                   style={{
                     backgroundImage: `url(${slide.image})`,
-                    backgroundPosition: index === 2 ? "center top" : "center 70%",
+                    backgroundPosition: index === 2 ? "center 15%" : "center 70%",
                   }}
                 />
                 <div className="relative z-20 container mx-auto h-full flex flex-col justify-center items-center text-center px-4">
-                  <motion.h1 
+                  <motion.h1
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.2, duration: 0.8 }}
@@ -63,7 +63,7 @@ export default function Home() {
                   >
                     {slide.title}
                   </motion.h1>
-                  <motion.p 
+                  <motion.p
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.4, duration: 0.8 }}
@@ -76,19 +76,37 @@ export default function Home() {
                     animate={{ y: 0, opacity: 1 }}
                     transition={{ delay: 0.6, duration: 0.8 }}
                   >
-                    <Link href={slide.link}>
-                      <Button size="lg" className="bg-accent text-accent-foreground hover:bg-white hover:text-primary text-lg px-8 py-6 font-heading font-bold uppercase tracking-wider transition-all transform hover:scale-105 shadow-xl border-2 border-transparent hover:border-white">
-                        {slide.cta}
-                      </Button>
-                    </Link>
+                    {slide.link.startsWith("http") ? (
+                      <a
+                        href={slide.link}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                      >
+                        <Button
+                          size="lg"
+                          className="bg-accent text-accent-foreground hover:bg-white hover:text-primary text-lg px-8 py-6 font-heading font-bold uppercase tracking-wider transition-all transform hover:scale-105 shadow-xl border-2 border-transparent hover:border-white"
+                        >
+                          {slide.cta}
+                        </Button>
+                      </a>
+                    ) : (
+                      <a href={slide.link}>
+                        <Button
+                          size="lg"
+                          className="bg-accent text-accent-foreground hover:bg-white hover:text-primary text-lg px-8 py-6 font-heading font-bold uppercase tracking-wider transition-all transform hover:scale-105 shadow-xl border-2 border-transparent hover:border-white"
+                        >
+                          {slide.cta}
+                        </Button>
+                      </a>
+                    )}
                   </motion.div>
                 </div>
               </CarouselItem>
             ))}
           </CarouselContent>
           <div className="hidden md:block">
-             <CarouselPrevious className="left-4 bg-white/10 hover:bg-white/20 border-none text-white" />
-             <CarouselNext className="right-4 bg-white/10 hover:bg-white/20 border-none text-white" />
+            <CarouselPrevious className="left-4 bg-white/10 hover:bg-white/20 border-none text-white" />
+            <CarouselNext className="right-4 bg-white/10 hover:bg-white/20 border-none text-white" />
           </div>
         </Carousel>
       </section>
@@ -98,7 +116,7 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center">
           <span className="text-accent font-bold tracking-widest uppercase mb-4 block">Welcome to the Club</span>
           <h2 className="text-5xl md:text-6xl font-heading font-bold text-primary mb-8 uppercase italic">
-            The World's Game, <br/>Played Locally
+            The World's Game, <br />Played Locally
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-12">
             Worldwide FC is dedicated to bringing together players from all backgrounds to compete, grow, and celebrate the beautiful game. Whether you're a seasoned pro or looking to join your first competitive team, there's a place for you here.

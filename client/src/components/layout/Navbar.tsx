@@ -44,7 +44,7 @@ export function Navbar() {
         {/* Socials & CTA */}
         <div className="hidden md:flex items-center gap-4">
           <a
-            href="https://instagram.com"
+            href="https://www.instagram.com/worldwide_fc_yyc/"
             target="_blank"
             rel="noreferrer"
             className="text-primary-foreground/80 hover:text-accent transition-colors"
