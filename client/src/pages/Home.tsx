@@ -51,7 +51,8 @@ export default function Home() {
                   className="absolute inset-0 bg-cover"
                   style={{
                     backgroundImage: `url(${slide.image})`,
-                    backgroundPosition: "center 70%",}}
+                    backgroundPosition: index === 2 ? "center top" : "center 70%",
+                  }}
                 />
                 <div className="relative z-20 container mx-auto h-full flex flex-col justify-center items-center text-center px-4">
                   <motion.h1 
@@ -121,7 +122,8 @@ export default function Home() {
 
       {/* CTA Section */}
       <section className="py-24 bg-primary text-primary-foreground relative overflow-hidden">
-        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80')] opacity-10 bg-cover bg-center fixed"></div>
+        {/* Fix: removed 'fixed' class which caused overlay issues across the page */}
+        <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1551958219-acbc608c6377?auto=format&fit=crop&q=80')] opacity-10 bg-cover bg-center"></div>
         <div className="container mx-auto px-4 relative z-10 text-center">
           <h2 className="text-6xl md:text-8xl font-heading font-black uppercase italic mb-8 text-white">
             Ready to <span className="text-accent">Play?</span>
