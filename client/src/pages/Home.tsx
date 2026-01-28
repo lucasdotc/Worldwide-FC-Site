@@ -51,14 +51,15 @@ export default function Home() {
                   className="absolute inset-0 bg-cover"
                   style={{
                     backgroundImage: `url(${slide.image})`,
-                    backgroundPosition: index === 2 ? "center 15%" : "center 70%",
+                    backgroundPosition: index === 1 ? "center 55%" : index === 2 ? "center 15%" : "center 70%",
                   }}
                 />
+                
                 <div className="relative z-20 container mx-auto h-full flex flex-col justify-center items-center text-center px-4">
                   <motion.h1
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.2, duration: 0.8 }}
+                    transition={{ delay: 0.2, duration: 1.0 }}
                     className="text-6xl md:text-8xl lg:text-9xl font-heading font-black text-white italic tracking-tighter uppercase drop-shadow-xl"
                   >
                     {slide.title}
@@ -66,7 +67,7 @@ export default function Home() {
                   <motion.p
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.4, duration: 0.8 }}
+                    transition={{ delay: 0.4, duration: 1.0 }}
                     className="text-xl md:text-2xl text-white/90 max-w-2xl mt-4 mb-8 font-medium drop-shadow-md"
                   >
                     {slide.subtitle}
@@ -74,7 +75,7 @@ export default function Home() {
                   <motion.div
                     initial={{ y: 20, opacity: 0 }}
                     animate={{ y: 0, opacity: 1 }}
-                    transition={{ delay: 0.6, duration: 0.8 }}
+                    transition={{ delay: 0.6, duration: 1.0 }}
                   >
                     {slide.link.startsWith("http") ? (
                       <a
@@ -84,7 +85,7 @@ export default function Home() {
                       >
                         <Button
                           size="lg"
-                          className="bg-accent text-accent-foreground hover:bg-white hover:text-primary text-lg px-8 py-6 font-heading font-bold uppercase tracking-wider transition-all transform hover:scale-105 shadow-xl border-2 border-transparent hover:border-white"
+                          className="bg-accent/80 text-accent-foreground hover:bg-white hover:text-primary text-lg px-8 py-6 font-heading font-bold uppercase tracking-wider transition-all transform hover:scale-105 shadow-xl border-2 border-transparent hover:border-white rounded-xl"
                         >
                           {slide.cta}
                         </Button>
@@ -93,7 +94,7 @@ export default function Home() {
                       <a href={slide.link}>
                         <Button
                           size="lg"
-                          className="bg-accent text-accent-foreground hover:bg-white hover:text-primary text-lg px-8 py-6 font-heading font-bold uppercase tracking-wider transition-all transform hover:scale-105 shadow-xl border-2 border-transparent hover:border-white"
+                          className="bg-accent/80 text-accent-foreground hover:bg-white hover:text-primary text-lg px-8 py-6 font-heading font-bold uppercase tracking-wider transition-all transform hover:scale-105 shadow-xl border-2 border-transparent hover:border-white rounded-xl"
                         >
                           {slide.cta}
                         </Button>

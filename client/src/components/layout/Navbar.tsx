@@ -52,14 +52,14 @@ export function Navbar() {
             <Instagram size={20} />
           </a>
           <a
-            href="https://wa.me/"
+            href="https://wa.link/nv42mi"
             target="_blank"
             rel="noreferrer"
             className="text-primary-foreground/80 hover:text-accent transition-colors"
           >
             <ImWhatsapp size={20} />
           </a>
-          <Link href="https://wa.link/nv42mi">
+          <Link href="/register">
             <Button variant="default" className="bg-accent text-accent-foreground hover:bg-white hover:text-primary font-bold uppercase tracking-wider">
               Join the Team
             </Button>

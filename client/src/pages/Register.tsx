@@ -15,6 +15,11 @@ import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
+import emailjs from "@emailjs/browser";
+
+const EMAILJS_SERVICE_ID = "service_i4ltsyg";
+const EMAILJS_TEMPLATE_ID = "template_ekhogck";
+const EMAILJS_PUBLIC_KEY = "hayhFKcuW2xaQ3XuG";
 
 const formSchema = z.object({
   fullName: z.string().min(2, { message: "Name must be at least 2 characters." }),
@@ -42,6 +47,19 @@ export default function Register() {
 
   function onSubmit(values: z.infer<typeof formSchema>) {
     console.log(values);
+    emailjs.send(
+      EMAILJS_SERVICE_ID,
+      EMAILJS_TEMPLATE_ID,
+      {
+        fullName: values.fullName,
+        email: values.email,
+        phone: values.phone,
+        dob: values.dob,
+        position: values.position,
+        experience: values.experience || "N/A",
+      },
+      EMAILJS_PUBLIC_KEY
+    );
     toast({
       title: "Registration Submitted!",
       description: "We've received your details. A coach will contact you shortly.",
