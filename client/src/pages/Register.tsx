@@ -17,8 +17,8 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import emailjs from "@emailjs/browser";
 
-//const EMAILJS_SERVICE_ID = "service_i4ltsyg";
-const EMAILJS_SERVICE_ID = "service_l4fecgr";
+const EMAILJS_SERVICE_ID = "service_i4ltsyg";
+//const EMAILJS_SERVICE_ID = "service_l4fecgr";
 const EMAILJS_TEMPLATE_ID = "template_ekhogck";
 const EMAILJS_PUBLIC_KEY = "hayhFKcuW2xaQ3XuG";
 
