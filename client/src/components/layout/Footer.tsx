@@ -28,7 +28,9 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-heading text-xl font-bold uppercase tracking-wide text-accent">Get in Touch</h4>
             <ul className="space-y-2 text-primary-foreground/70">
-              <li>coachlucas@worldwidefc.com</li>
+              <li>philliphanoski@worldwidefc.ca</li>
+              <li>tomasmonroy@worldwidefc.ca</li>
+              <li>coachlucas@worldwidefc.ca</li>
               <li>+1 (587) 500-4823</li>
               <li>Calgary, AB</li>
             </ul>

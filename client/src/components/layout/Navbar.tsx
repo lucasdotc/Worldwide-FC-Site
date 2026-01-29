@@ -101,11 +101,17 @@ export function Navbar() {
                   </Link>
                 </div>
                 <div className="flex justify-center gap-6 mt-4">
-                  <a href="#" className="text-primary-foreground hover:text-accent">
+                  <a href="https://www.instagram.com/worldwide_fc_yyc/" className="text-primary-foreground hover:text-accent"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
                     <Instagram size={24} />
                   </a>
-                  <a href="#" className="text-primary-foreground hover:text-accent">
-                    <Phone size={24} />
+                  <a href="https://wa.link/nv42mi" className="text-primary-foreground hover:text-accent"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <ImWhatsapp size={24} />
                   </a>
                 </div>
               </div>

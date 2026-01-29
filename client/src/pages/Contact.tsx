@@ -28,7 +28,7 @@ export default function Contact() {
                 </div>
                 <div>
                   <h3 className="font-bold text-lg uppercase">Email</h3>
-                  <p className="text-muted-foreground">philliphanoski@worldwidefc.com<br/>tomasmonroy@worldwidefc.com<br/>coachlucas@worldwidefc.com</p>
+                  <p className="text-muted-foreground">philliphanoski@worldwidefc.ca<br/>tomasmonroy@worldwidefc.ca<br/>coachlucas@worldwidefc.ca</p>
                 </div>
               </div>
 
