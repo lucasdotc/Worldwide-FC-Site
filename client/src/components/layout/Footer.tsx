@@ -4,7 +4,13 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
           {/* Brand */}
-          <div className="space-y-4">
+          <div className="space-y-2 space-x-0">
+            <img
+              src="/worldwide-logo.png"
+              alt="Worldwide FC Logo"
+              className="h-12 w-auto"
+              draggable={false}
+            />
             <h3 className="font-heading text-3xl font-bold uppercase italic">
               Worldwide<span className="text-accent"> FC</span>
             </h3>

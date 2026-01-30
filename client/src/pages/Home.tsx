@@ -148,7 +148,7 @@ export default function Home() {
             Ready to <span className="text-accent">Play?</span>
           </h2>
           <p className="text-2xl text-white/80 mb-10 max-w-2xl mx-auto">
-            Registration for the upcoming season is now open. Don't miss your chance to be part of the legacy.
+            Registration for the 2026 outdoor season is now open.
           </p>
           <Link href="/register">
             <Button size="lg" className="bg-accent text-accent-foreground hover:bg-white hover:text-primary text-xl px-12 py-8 font-heading font-bold uppercase tracking-widest shadow-2xl transition-transform hover:scale-105">
