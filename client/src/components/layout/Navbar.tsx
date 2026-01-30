@@ -21,19 +21,27 @@ export function Navbar() {
       <div className="container mx-auto flex h-20 items-center justify-between px-4">
         {/* Logo */}
         <Link href="/">
-          <a className="flex items-center gap-2 font-heading text-3xl font-bold uppercase italic tracking-tighter hover:text-accent transition-colors">
-            Worldwide<span className="text-accent">FC</span>
+          <a className="flex items-center gap-3">
+            <img
+              src="/worldwide-logo.png"
+              alt="Worldwide FC Logo"
+              className="h-12 w-auto"
+              draggable={false}
+            />
+            <span className="hidden sm:block text-3xl font-bold uppercase italic">
+              Worldwide<span className="text-accent"> FC</span>
+            </span>
           </a>
         </Link>
+
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-8">
           {NAV_ITEMS.map((item) => (
             <Link key={item.href} href={item.href}>
               <a
-                className={`text-sm font-medium uppercase tracking-widest transition-colors hover:text-accent ${
-                  location === item.href ? "text-accent border-b-2 border-accent" : "text-primary-foreground/80"
-                }`}
+                className={`text-sm font-medium uppercase tracking-widest transition-colors hover:text-accent ${location === item.href ? "text-accent border-b-2 border-accent" : "text-primary-foreground/80"
+                  }`}
               >
                 {item.label}
               </a>
@@ -85,9 +93,8 @@ export function Navbar() {
                   {NAV_ITEMS.map((item) => (
                     <Link key={item.href} href={item.href}>
                       <a
-                        className={`text-lg font-medium uppercase text-center py-2 border-b border-primary-foreground/10 ${
-                          location === item.href ? "text-accent" : "text-primary-foreground"
-                        }`}
+                        className={`text-lg font-medium uppercase text-center py-2 border-b border-primary-foreground/10 ${location === item.href ? "text-accent" : "text-primary-foreground"
+                          }`}
                         onClick={() => setIsOpen(false)}
                       >
                         {item.label}
