@@ -77,7 +77,7 @@ export default function Register() {
       formData.append("media", file);
     });
 
-    const res = await fetch("http://localhost:5001/submit", {
+    const res = await fetch(import.meta.env.VITE_API_URL+"submit", {
       method: "POST",
       body: formData,
     });
