@@ -4,7 +4,7 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
           {/* Brand */}
-          <div className="space-y-2 space-x-0">
+          <div className="space-y-2">
             <img
               src="/worldwide-logo.png"
               alt="Worldwide FC Logo"
