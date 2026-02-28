@@ -4,18 +4,22 @@ export function Footer() {
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-3 gap-8 text-center md:text-left">
           {/* Brand */}
-          <div className="space-y-2">
-            <img
-              src="/worldwide-logo.png"
-              alt="Worldwide FC Logo"
-              className="h-12 w-auto"
-              draggable={false}
-            />
-            <h3 className="font-heading text-3xl font-bold uppercase italic">
-              Worldwide<span className="text-accent"> FC</span>
-            </h3>
+          <div className="space-y-4">
+            <div className="flex items-center justify-center md:justify-start gap-3">
+              <img
+                src="/favicon.png"
+                alt="Worldwide FC Logo"
+                className="h-14 w-auto"
+                draggable={false}
+              />
+              <h3 className="font-heading text-3xl font-bold uppercase italic">
+                Worldwide<span className="text-accent"> FC</span>
+              </h3>
+            </div>
+
             <p className="text-primary-foreground/70 max-w-xs mx-auto md:mx-0">
-              Uniting players from across the globe through the beautiful game. Technical and tactical training, competitive matches, and a family atmosphere.
+              Uniting players from across the globe through the beautiful game.
+              Technical and tactical training, competitive matches, and a family atmosphere.
             </p>
           </div>
 
@@ -41,7 +45,7 @@ export function Footer() {
               <li>Calgary, AB</li>
             </ul>
             <div className="flex justify-center md:justify-start gap-4 pt-2">
-               {/* Icons could go here again if needed */}
+              {/* Icons could go here again if needed */}
             </div>
           </div>
         </div>

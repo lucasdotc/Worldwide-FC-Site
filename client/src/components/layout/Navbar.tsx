@@ -23,9 +23,9 @@ export function Navbar() {
         <Link href="/">
           <a className="flex items-center gap-3">
             <img
-              src="/worldwide-logo.png"
+              src="/favicon.png"
               alt="Worldwide FC Logo"
-              className="h-12 w-auto"
+              className="h-20 w-auto"
               draggable={false}
             />
             <span className="hidden sm:block text-3xl font-bold uppercase italic">

@@ -125,7 +125,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="p-8 bg-muted hover:bg-primary hover:text-white transition-colors group">
               <h3 className="text-3xl font-heading font-bold mb-4 uppercase italic">Elite Training</h3>
-              <p className="group-hover:text-white/80">Access to professional coaching, frequent training, and personal development programs.</p>
+              <p className="group-hover:text-white/80">Access to coaching, frequent training, and personal development programs.</p>
             </div>
             <div className="p-8 bg-muted hover:bg-primary hover:text-white transition-colors group">
               <h3 className="text-3xl font-heading font-bold mb-4 uppercase italic">Global Community</h3>
