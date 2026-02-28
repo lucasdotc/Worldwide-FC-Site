@@ -21,10 +21,8 @@ dotenv.config({
 
 import { google } from "googleapis";
 const app = express();
-app.use(cors({
-  origin: ["https://www.worldwidefc.ca", "https://worldwidefc.ca"],
-  methods: ["POST", "GET", "OPTIONS"]
-}));
+app.use(cors());
+//app.options("*", cors());
 const httpServer = createServer(app);
 app.use(express.json());
 
