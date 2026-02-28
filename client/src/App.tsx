@@ -9,6 +9,8 @@ import About from "@/pages/About";
 import Contact from "@/pages/Contact";
 import FAQ from "@/pages/FAQ";
 import Register from "@/pages/Register";
+import Policies from "@/pages/Policies";
+import Sponsors from "@/pages/Sponsors";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -20,7 +22,9 @@ function Router() {
       <Route path="/about" component={About} />
       <Route path="/contact" component={Contact} />
       <Route path="/faq" component={FAQ} />
+      <Route path="/sponsors" component={Sponsors} />
       <Route path="/register" component={Register} />
+      <Route path="/policies" component={Policies} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -27,7 +27,7 @@ export default function Home() {
     {
       image: vini,
       title: "REACH YOUR FULL POTENTIAL",
-      subtitle: "Professional coaching staff dedicated to your development.",
+      subtitle: "Capable coaching staff dedicated to your development.",
       cta: "About Us",
       link: "/about"
     }
@@ -115,12 +115,12 @@ export default function Home() {
       {/* Intro Section */}
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 text-center">
-          <span className="text-accent font-bold tracking-widest uppercase mb-4 block">Welcome to the Club</span>
+          <span className="text-accent font-bold tracking-widest uppercase mb-4 block">Welcome to Worldwide</span>
           <h2 className="text-5xl md:text-6xl font-heading font-bold text-primary mb-8 uppercase italic">
             The World's Game, <br />Played Locally
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed mb-12">
-            Worldwide FC is dedicated to bringing together players from all backgrounds to compete, grow, and celebrate the beautiful game. Whether you're a seasoned pro or looking to join your first competitive team, there's a place for you here.
+            Worldwide FC is dedicated to bringing together players from all backgrounds to compete, grow, and celebrate the beautiful game.
           </p>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="p-8 bg-muted hover:bg-primary hover:text-white transition-colors group">
