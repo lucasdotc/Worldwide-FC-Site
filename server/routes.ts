@@ -60,13 +60,12 @@ export async function registerRoutes(
             user: process.env.EMAIL_USER,
             pass: process.env.EMAIL_PASS,
           },
+          connectionTimeout: 5000,
+          socketTimeout: 5000,
         });
 
-        // Test the connection
-        await transporter.verify();
-
         let mailOptions = {
-          from: email,
+          from: process.env.EMAIL_USER,
           to: process.env.EMAIL_USER,
           replyTo: email,
           subject: `Contact Form Submission: ${subject}`,
@@ -81,12 +80,18 @@ export async function registerRoutes(
           `,
         };
 
-        await transporter.sendMail(mailOptions);
-        console.log("Email sent successfully");
+        // Send email with timeout
+        const emailPromise = transporter.sendMail(mailOptions);
+        const timeoutPromise = new Promise((_, reject) => 
+          setTimeout(() => reject(new Error("Email send timeout")), 10000)
+        );
+        
+        await Promise.race([emailPromise, timeoutPromise]);
+        console.log("✅ Email sent successfully");
       } catch (emailError) {
-        console.error("Email sending error:", emailError);
+        console.error("⚠️ Email sending error:", emailError instanceof Error ? emailError.message : emailError);
         // Don't fail the request if email fails, just log it
-        console.log("Contact form data logged to console even though email failed");
+        console.log("✅ Contact form data saved (email failed but form accepted)");
       }
 
       return res.json({ success: true, message: "Contact form submitted successfully" });
