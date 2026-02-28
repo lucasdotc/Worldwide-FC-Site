@@ -46,7 +46,7 @@ export default function Contact() {
   async function onSubmit(values: ContactFormValues) {
     setIsSubmitting(true);
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch(import.meta.env.VITE_API_URL + "/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
