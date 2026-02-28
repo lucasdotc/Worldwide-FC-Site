@@ -135,7 +135,7 @@ const upload = multer({
 app.post("/submit", upload.array("media", 5), async (req, res) => {
   try {
     const files = req.files as Express.Multer.File[];
-
+    
     const {
       fullName,
       email,
