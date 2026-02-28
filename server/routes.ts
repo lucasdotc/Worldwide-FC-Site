@@ -53,9 +53,11 @@ export async function registerRoutes(
       try {
         //const nodemailer = require("nodemailer");
 
-        // Create a transporter using your email service credentials
+        // Create a transporter using explicit SMTP settings
         const transporter = nodemailer.createTransport({
-          service: "gmail",
+          host: "smtp.gmail.com",
+          port: 587,
+          secure: false, // Use TLS instead of SSL
           auth: {
             user: process.env.EMAIL_USER,
             pass: process.env.EMAIL_PASS,
