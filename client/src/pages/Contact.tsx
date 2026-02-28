@@ -42,11 +42,11 @@ export default function Contact() {
       message: "",
     },
   });
-
+  const API = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
   async function onSubmit(values: ContactFormValues) {
     setIsSubmitting(true);
     try {
-      const response = await fetch(import.meta.env.VITE_API_URL + "api/contact", {
+      const response = await fetch(`${API}/api/contact`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
