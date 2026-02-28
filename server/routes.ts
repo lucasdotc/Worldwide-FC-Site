@@ -4,6 +4,7 @@ import { storage } from "./storage";
 import { send } from "vite";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
+import cors from "cors";
 
 dotenv.config({
   path: "./server/.env"
@@ -14,6 +15,11 @@ export async function registerRoutes(
   app: Express
 ): Promise<Server> {
   console.log("✅ Registering API routes...");
+
+  app.use(cors({
+    origin: ["https://www.worldwidefc.ca", "https://worldwidefc.ca"],
+    methods: ["POST", "GET", "OPTIONS"]
+  }));
   
   // put application routes here
   // prefix all routes with /api
