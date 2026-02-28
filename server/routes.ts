@@ -16,10 +16,6 @@ export async function registerRoutes(
 ): Promise<Server> {
   console.log("✅ Registering API routes...");
 
-  app.use(cors({
-    origin: ["https://www.worldwidefc.ca", "https://worldwidefc.ca"],
-    methods: ["POST", "GET", "OPTIONS"]
-  }));
   
   // put application routes here
   // prefix all routes with /api

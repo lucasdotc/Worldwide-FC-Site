@@ -26,7 +26,8 @@ app.use(cors({
   methods: ["POST", "GET", "OPTIONS"]
 }));
 const httpServer = createServer(app);
-
+app.options("*", cors()); 
+app.use(express.json());
 
 //console.log("ENV:", process.env.GOOGLE_SERVICE_ACCOUNT_JSON);
 
@@ -135,7 +136,7 @@ const upload = multer({
 app.post("/submit", upload.array("media", 5), async (req, res) => {
   try {
     const files = req.files as Express.Multer.File[];
-    
+
     const {
       fullName,
       email,
