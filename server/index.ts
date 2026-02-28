@@ -27,21 +27,28 @@ app.use((req, res, next) => {
   const allowed = new Set([
     "https://www.worldwidefc.ca",
     "https://worldwidefc.ca",
+    "http://localhost:5001",
+    "http://localhost:5173",
   ]);
 
   if (origin && allowed.has(origin)) {
     res.setHeader("Access-Control-Allow-Origin", origin);
+    res.setHeader("Access-Control-Allow-Credentials", "true");
   }
 
   res.setHeader("Vary", "Origin");
-  res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,PUT,DELETE,OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type,Authorization");
 
   // Preflight request
   if (req.method === "OPTIONS") {
     return res.sendStatus(204);
   }
 
+  next();
+});
+app.use((req, _res, next) => {
+  console.log("INCOMING:", req.method, req.url, "origin=", req.headers.origin);
   next();
 });
 app.use(cors());
