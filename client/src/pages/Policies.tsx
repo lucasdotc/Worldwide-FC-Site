@@ -57,7 +57,7 @@ export default function Policies() {
 
                         items={[
                             <a
-                                href="/player-waiver-code-of-conduct.pdf"
+                                href="/participation-waiver.pdf"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center mt-4 rounded-md bg-primary px-5 py-2.5 text-primary-foreground font-semibold hover:opacity-90 transition"
