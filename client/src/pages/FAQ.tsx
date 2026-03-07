@@ -49,7 +49,7 @@ export default function FAQ() {
               Is there a membership fee?
             </AccordionTrigger>
             <AccordionContent className="text-muted-foreground text-lg">
-              Yes, there is a seasonal membership fee of $300 CAD that covers kit, field rental, gear, and league registration fees. 
+              Yes, there is a seasonal membership fee of $320 CAD that covers kit, field rental, gear, and league registration fees. Note: this amount includes a $40 CAD jersey deposit which will be returned to you upon return of your jersey.
             </AccordionContent>
           </AccordionItem>
           

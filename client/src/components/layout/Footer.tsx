@@ -39,8 +39,6 @@ export function Footer() {
           <div className="space-y-4">
             <h4 className="font-heading text-xl font-bold uppercase tracking-wide text-accent">Get in Touch</h4>
             <ul className="space-y-2 text-primary-foreground/70">
-              <li>philliphanoski@worldwidefc.ca</li>
-              <li>tomasmonroy@worldwidefc.ca</li>
               <li>coachlucas@worldwidefc.ca</li>
               <li>+1 (587) 500-4823</li>
               <li>Calgary, AB</li>
@@ -53,24 +51,25 @@ export function Footer() {
         {/* Sponsors Section */}
         <div className="mt-12 pt-8 border-t border-border">
           <h4 className="relative z-20 font-heading text-xl font-bold uppercase tracking-wide text-center text-accent">
-            <a href="/sponsors" className="hover:text-accent transition-colors">Our Sponsors</a>
+            <a href="/sponsors" className="hover:text-accent transition-colors">
+              Our Sponsors
+            </a>
           </h4>
 
-          <div className="h-20 flex items-center justify-center">
-            <div className="mt-6 flex flex-wrap justify-center items-center gap-8">
-              <img
-                src="carvajal_resized.png"
-                alt="Carvajal Trims"
-                className="h-full w-auto object-contain pointer-events-none"
-              />
+          <div className="mt-6 flex flex-wrap justify-center items-center gap-6">
+            <img
+              src="/carvajal_resized.png"
+              alt="Carvajal Trims"
+              className="h-[165px] w-auto object-contain pointer-events-none"
+            />
 
-              <img
-                src="cmp_bk.webp"
-                alt="CMP Auto"
-                className="h-12 w-auto object-contain pointer-events-none"
-              />
-            </div>
+            <img
+              src="/cmp_bk.webp"
+              alt="CMP Auto"
+              className="h-12 w-auto object-contain pointer-events-none"
+            />
           </div>
+
           <div className="border-t border-white/10 mt-12 pt-8 text-center text-sm text-primary-foreground/50">
             © {new Date().getFullYear()} Worldwide FC. All rights reserved.
           </div>
