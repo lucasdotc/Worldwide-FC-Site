@@ -100,15 +100,7 @@ export default function Contact() {
           <div>
             <h2 className="text-3xl font-heading font-bold text-primary mb-8 uppercase italic">Get in Touch</h2>
             <div className="space-y-8">
-              <div className="flex items-start gap-4">
-                <div className="bg-accent/10 p-3 rounded-full text-primary">
-                  <Mail size={24} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg uppercase">Email</h3>
-                  <p className="text-muted-foreground">philliphanoski@worldwidefc.ca<br />tomasmonroy@worldwidefc.ca<br />coachlucas@worldwidefc.ca</p>
-                </div>
-              </div>
+              
 
               <div className="flex items-start gap-4">
                 <div className="bg-accent/10 p-3 rounded-full text-primary">
@@ -117,7 +109,6 @@ export default function Contact() {
                 <div>
                   <h3 className="font-bold text-lg uppercase">WhatsApp</h3>
                   <p className="text-muted-foreground">+1 (587) 500-4823</p>
-                  <p className="text-muted-foreground">+1 (587) 834 0475</p>
                 </div>
               </div>
             </div>

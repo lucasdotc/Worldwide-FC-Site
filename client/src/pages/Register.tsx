@@ -110,7 +110,7 @@ export default function Register() {
         <h1 className="text-5xl md:text-7xl font-heading font-black text-white uppercase italic tracking-tighter">
           Join the <span className="text-accent">Squad</span>
         </h1>
-        <p className="text-white/70 mt-4 text-lg">Take the first step towards glory.</p>
+        
       </div>
 
       <div className="container mx-auto px-4 py-16 max-w-2xl">

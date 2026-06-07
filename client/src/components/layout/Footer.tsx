@@ -1,3 +1,5 @@
+import { ImWhatsapp } from "react-icons/im";
+
 export function Footer() {
   return (
     <footer className="bg-primary text-primary-foreground py-12 border-t border-accent/20">
@@ -38,14 +40,14 @@ export function Footer() {
           {/* Contact */}
           <div className="space-y-4">
             <h4 className="font-heading text-xl font-bold uppercase tracking-wide text-accent">Get in Touch</h4>
-            <ul className="space-y-2 text-primary-foreground/70">
-              <li>coachlucas@worldwidefc.ca</li>
-              <li>+1 (587) 500-4823</li>
-              <li>Calgary, AB</li>
-            </ul>
-            <div className="flex justify-center md:justify-start gap-4 pt-2">
-              {/* Icons could go here again if needed */}
-            </div>
+            <a
+              href="https://wa.link/nv42mi"
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 text-primary-foreground/70 hover:text-accent transition-colors"
+            >
+              <ImWhatsapp size={24} />
+            </a>
           </div>
         </div>
         {/* Sponsors Section */}

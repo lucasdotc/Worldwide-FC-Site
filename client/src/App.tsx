@@ -11,6 +11,7 @@ import FAQ from "@/pages/FAQ";
 import Register from "@/pages/Register";
 import Policies from "@/pages/Policies";
 import Sponsors from "@/pages/Sponsors";
+import Roster from "@/pages/Roster";
 import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
@@ -25,6 +26,7 @@ function Router() {
       <Route path="/sponsors" component={Sponsors} />
       <Route path="/register" component={Register} />
       <Route path="/policies" component={Policies} />
+      <Route path="/roster" component={Roster} />
       <Route component={NotFound} />
     </Switch>
   );

@@ -12,6 +12,7 @@ const NAV_ITEMS = [
   { label: "FAQ", href: "/faq" },
   { label: "Our Sponsors", href: "/sponsors" },
   { label: "Policies", href: "/policies" },
+  { label: "Roster", href: "/roster" },
 ];
 
 export function Navbar() {
