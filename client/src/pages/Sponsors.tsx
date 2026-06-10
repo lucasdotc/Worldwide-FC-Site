@@ -57,7 +57,7 @@ export default function Sponsors() {
           <img src={hero3} alt="Background" className="w-full h-full object-cover opacity-50" />
         </div>
         <div className="container mx-auto px-4 relative z-20 text-center">
-          <h1 className="text-6xl md:text-8xl font-heading font-black text-white uppercase italic tracking-tighter mb-4">
+          <h1 className="text-6xl md:text-8xl font-heading font-black text-white uppercase tracking-tighter mb-4">
             Our <span className="text-accent">Sponsors</span>
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto font-medium">
@@ -116,7 +116,7 @@ export default function Sponsors() {
       {/* Call to Action */}
       <div className="bg-primary/5 py-16">
         <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-4 uppercase italic">
+          <h2 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-4 uppercase">
             Become a <span className="text-accent">Sponsor</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">

@@ -9,7 +9,7 @@ export default function FAQ() {
   return (
     <div className="min-h-screen bg-background">
       <div className="bg-primary py-16 text-center">
-        <h1 className="text-5xl md:text-7xl font-heading font-black text-white uppercase italic tracking-tighter">
+        <h1 className="text-5xl md:text-7xl font-heading font-black text-white uppercase tracking-tighter">
           FAQ
         </h1>
         <p className="text-white/70 mt-4 text-lg">Frequently Asked Questions</p>

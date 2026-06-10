@@ -96,13 +96,17 @@ export default function Roster() {
   return (
     <div className="min-h-screen bg-background">
       {/* Header */}
-      <div className="relative bg-primary py-24">
+      <div className="relative bg-primary py-20">
         <div className="absolute inset-0 bg-primary/90 z-10" />
         <div className="container mx-auto px-4 relative z-20 text-center">
-          <h1 className="text-6xl md:text-8xl font-heading font-black text-white uppercase italic tracking-tighter mb-4">
+          <div className="flex items-center justify-center gap-3 mb-3">
+            <span className="h-px w-10 bg-accent/60" />
+            <span className="text-accent text-xs font-bold tracking-[0.25em] uppercase">2025–2026 Season</span>
+            <span className="h-px w-10 bg-accent/60" />
+          </div>
+          <h1 className="text-6xl md:text-8xl font-heading font-black text-white uppercase tracking-tight">
             Our <span className="text-accent">Rosters</span>
           </h1>
-          
         </div>
       </div>
 
@@ -115,26 +119,35 @@ export default function Roster() {
               initial={{ y: 40, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
               transition={{ duration: 0.5, delay: i * 0.15 }}
-              className="bg-muted rounded-sm overflow-hidden shadow-md"
+              className="bg-white rounded-sm overflow-hidden shadow-md border border-border"
             >
               {/* Team header */}
-              <div className="bg-primary px-6 py-4">
-                <h2 className="text-2xl font-heading font-bold text-white uppercase italic tracking-wide">
+              <div className="bg-primary px-6 py-4 flex items-center justify-between">
+                <h2 className="text-xl font-heading font-bold text-white uppercase tracking-wide">
                   {roster.team}
                 </h2>
+                <span className="text-accent/80 text-xs font-bold uppercase tracking-widest">
+                  {roster.players.length} Players
+                </span>
+              </div>
+
+              {/* Column labels */}
+              <div className="flex items-center gap-4 px-6 py-2 bg-muted border-b border-border">
+                <span className="w-8 text-center text-xs font-bold uppercase tracking-widest text-muted-foreground">#</span>
+                <span className="text-xs font-bold uppercase tracking-widest text-muted-foreground">Player</span>
               </div>
 
               {/* Player list */}
               <ul className="divide-y divide-border">
-                {roster.players.map((player) => (
+                {roster.players.map((player, idx) => (
                   <li
-                    key={`${player.number}-${player.name}`}
-                    className="flex items-center gap-4 px-6 py-3 hover:bg-background/60 transition-colors"
+                    key={`${player.number}-${player.name}-${idx}`}
+                    className="flex items-center gap-4 px-6 py-3 hover:bg-muted/60 transition-colors duration-150"
                   >
-                    <span className="w-8 text-center font-heading font-bold text-accent text-lg">
-                      {player.number}
+                    <span className="w-8 text-center font-heading font-bold text-accent text-base shrink-0">
+                      {player.number === 0 ? "—" : player.number}
                     </span>
-                    <span className="font-medium text-foreground">{player.name}</span>
+                    <span className="font-medium text-foreground text-sm">{player.name}</span>
                   </li>
                 ))}
               </ul>

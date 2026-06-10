@@ -107,7 +107,7 @@ export default function Register() {
   return (
     <div className="min-h-screen bg-background">
       <div className="bg-primary py-16 text-center">
-        <h1 className="text-5xl md:text-7xl font-heading font-black text-white uppercase italic tracking-tighter">
+        <h1 className="text-5xl md:text-7xl font-heading font-black text-white uppercase tracking-tighter">
           Join the <span className="text-accent">Squad</span>
         </h1>
         

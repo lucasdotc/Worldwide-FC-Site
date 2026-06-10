@@ -11,7 +11,7 @@ export default function Policies() {
                         <p className="font-heading uppercase tracking-wide text-accent">
                             Worldwide FC
                         </p>
-                        <h1 className="font-heading mt-2 text-4xl md:text-6xl font-bold uppercase italic">
+                        <h1 className="font-heading mt-2 text-4xl md:text-6xl font-bold uppercase">
                             Club <span className="text-accent">Policies</span>
                         </h1>
                         <p className="mt-4 text-base md:text-lg text-muted-foreground">

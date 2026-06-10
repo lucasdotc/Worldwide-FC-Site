@@ -14,7 +14,7 @@ export function Footer() {
                 className="h-14 w-auto"
                 draggable={false}
               />
-              <h3 className="font-heading text-3xl font-bold uppercase italic">
+              <h3 className="font-heading text-3xl font-bold uppercase">
                 Worldwide<span className="text-accent"> FC</span>
               </h3>
             </div>
@@ -50,13 +50,10 @@ export function Footer() {
             </a>
           </div>
         </div>
+
         {/* Sponsors Section */}
         <div className="mt-12 pt-8 border-t border-border">
-          <h4 className="relative z-20 font-heading text-xl font-bold uppercase tracking-wide text-center text-accent">
-            <a href="/sponsors" className="hover:text-accent transition-colors">
-              Our Sponsors
-            </a>
-          </h4>
+          
 
           <div className="mt-6 flex flex-wrap justify-center items-center gap-6">
             <img
@@ -64,7 +61,6 @@ export function Footer() {
               alt="Carvajal Trims"
               className="h-[165px] w-auto object-contain pointer-events-none"
             />
-
             <img
               src="/cmp_bk.webp"
               alt="CMP Auto"

@@ -32,7 +32,7 @@
   --radius-xl: calc(var(--radius) + 4px);
 
   --font-sans: "DM Sans", system-ui, sans-serif;
-  --font-heading: "Barlow Condensed", sans-serif;
+  --font-heading: "Satoshi", sans-serif;
 }
 
 :root {
@@ -66,7 +66,7 @@
   --input: 40 30% 85%;
   --ring: 42 75% 45%; /* Gold focus ring */
 
-  --radius: 0rem;
+  --radius: 0.25rem;
 }
 
 .dark {
@@ -102,6 +102,9 @@
 @layer base {
   * {
     @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
   }
   body {
     @apply font-sans antialiased bg-background text-foreground;

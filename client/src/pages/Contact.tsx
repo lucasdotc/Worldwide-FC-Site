@@ -1,4 +1,4 @@
-import { Mail } from "lucide-react";
+import { FaInstagram } from "react-icons/fa";
 import { ImWhatsapp } from "react-icons/im";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -6,7 +6,6 @@ import { Textarea } from "@/components/ui/textarea";
 import {
   Form,
   FormControl,
-  FormDescription,
   FormField,
   FormItem,
   FormLabel,
@@ -28,6 +27,23 @@ const contactSchema = z.object({
 
 type ContactFormValues = z.infer<typeof contactSchema>;
 
+const CONTACT_INFO = [
+  {
+    icon: ImWhatsapp,
+    label: "WhatsApp",
+    value: "+1 (587) 500-4823",
+    href: "https://wa.link/nv42mi",
+    external: true,
+  },
+  {
+    icon: FaInstagram,
+    label: "Instagram",
+    value: "@worldwide_fc_yyc",
+    href: "https://www.instagram.com/worldwide_fc_yyc/",
+    external: true,
+  },
+];
+
 export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
@@ -42,15 +58,15 @@ export default function Contact() {
       message: "",
     },
   });
+
   const API = (import.meta.env.VITE_API_URL || "").replace(/\/$/, "");
+
   async function onSubmit(values: ContactFormValues) {
     setIsSubmitting(true);
     try {
       const response = await fetch(`${API}/api/contact`, {
         method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
+        headers: { "Content-Type": "application/json" },
         body: JSON.stringify(values),
       });
 
@@ -58,8 +74,6 @@ export default function Contact() {
       try {
         data = await response.json();
       } catch {
-        // If response is not valid JSON, handle it
-        console.error("Invalid JSON response:", response.statusText);
         throw new Error(`Server error: ${response.status} ${response.statusText}`);
       }
 
@@ -68,16 +82,15 @@ export default function Contact() {
       }
 
       toast({
-        title: "Success!",
-        description: "Your message has been sent. We'll get back to you soon!",
+        title: "Message sent!",
+        description: "We'll get back to you as soon as possible.",
       });
-
       form.reset();
     } catch (error) {
-      const errorMessage = error instanceof Error ? error.message : "Failed to send message. Please try again.";
-      console.error("Contact form error:", errorMessage);
+      const errorMessage =
+        error instanceof Error ? error.message : "Failed to send message. Please try again.";
       toast({
-        title: "Error",
+        title: "Something went wrong",
         description: errorMessage,
         variant: "destructive",
       });
@@ -88,44 +101,75 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen bg-background">
-      <div className="bg-primary py-16 text-center">
-        <h1 className="text-5xl md:text-7xl font-heading font-black text-white uppercase italic tracking-tighter">
+      {/* Page header */}
+      <div className="bg-primary py-20 text-center">
+        <div className="flex items-center justify-center gap-3 mb-3">
+          <span className="h-px w-10 bg-accent/60" />
+          <span className="text-accent text-xs font-bold tracking-[0.25em] uppercase">Reach Out</span>
+          <span className="h-px w-10 bg-accent/60" />
+        </div>
+        <h1 className="text-5xl md:text-7xl font-heading font-black text-white uppercase tracking-tight">
           Contact <span className="text-accent">Us</span>
         </h1>
       </div>
 
       <div className="container mx-auto px-4 py-16">
-        <div className="grid md:grid-cols-2 gap-12">
+        <div className="grid md:grid-cols-2 gap-12 items-start">
           {/* Contact Info */}
           <div>
-            <h2 className="text-3xl font-heading font-bold text-primary mb-8 uppercase italic">Get in Touch</h2>
-            <div className="space-y-8">
-              
+            <h2 className="text-3xl font-heading font-bold text-primary mb-3 uppercase">
+              Get in Touch
+            </h2>
+            <p className="text-muted-foreground text-sm leading-relaxed mb-8 max-w-sm">
+              Have a question about joining, training, or anything else? Reach us through any of the channels below or fill out the form.
+            </p>
 
-              <div className="flex items-start gap-4">
-                <div className="bg-accent/10 p-3 rounded-full text-primary">
-                  <ImWhatsapp size={24} />
-                </div>
-                <div>
-                  <h3 className="font-bold text-lg uppercase">WhatsApp</h3>
-                  <p className="text-muted-foreground">+1 (587) 500-4823</p>
-                </div>
-              </div>
+            <div className="space-y-4">
+              {CONTACT_INFO.map(({ icon: Icon, label, value, href, external }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target={external ? "_blank" : undefined}
+                  rel={external ? "noreferrer" : undefined}
+                  className="flex items-center gap-4 p-4 bg-white border border-border hover:border-accent hover:shadow-sm transition-all duration-200 group cursor-pointer"
+                >
+                  <div className="bg-accent/10 p-3 text-primary group-hover:bg-accent group-hover:text-white transition-colors duration-200 rounded-sm">
+                    <Icon size={20} />
+                  </div>
+                  <div>
+                    <p className="text-xs font-bold uppercase tracking-widest text-muted-foreground">{label}</p>
+                    <p className="font-medium text-foreground group-hover:text-accent transition-colors duration-200">{value}</p>
+                  </div>
+                </a>
+              ))}
+            </div>
+
+            <div className="mt-10 p-6 bg-primary text-primary-foreground">
+              <h3 className="font-heading text-lg font-bold uppercase mb-2">Looking to Join?</h3>
+              <p className="text-primary-foreground/70 text-sm leading-relaxed mb-4">
+                Registration requests can be submitted directly through our registration page.
+              </p>
+              <a
+                href="/register"
+                className="inline-block bg-accent text-accent-foreground text-xs font-bold uppercase tracking-widest px-5 py-2.5 hover:bg-white hover:text-primary transition-colors duration-200 cursor-pointer"
+              >
+                Registration Request →
+              </a>
             </div>
           </div>
 
           {/* Form */}
-          <div className="bg-white p-8 border shadow-sm">
-            <h2 className="text-3xl font-heading font-bold text-primary mb-6 uppercase italic">Send a Message</h2>
+          <div className="bg-white p-8 border border-border shadow-sm">
+            <h2 className="text-2xl font-heading font-bold text-primary mb-6 uppercase">Send a Message</h2>
             <Form {...form}>
-              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-5">
                 <div className="grid grid-cols-2 gap-4">
                   <FormField
                     control={form.control}
                     name="firstName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-sm font-bold uppercase tracking-wide">First Name</FormLabel>
+                        <FormLabel className="text-xs font-bold uppercase tracking-wide">First Name</FormLabel>
                         <FormControl>
                           <Input placeholder="John" {...field} />
                         </FormControl>
@@ -138,7 +182,7 @@ export default function Contact() {
                     name="lastName"
                     render={({ field }) => (
                       <FormItem>
-                        <FormLabel className="text-sm font-bold uppercase tracking-wide">Last Name</FormLabel>
+                        <FormLabel className="text-xs font-bold uppercase tracking-wide">Last Name</FormLabel>
                         <FormControl>
                           <Input placeholder="Doe" {...field} />
                         </FormControl>
@@ -153,7 +197,7 @@ export default function Contact() {
                   name="email"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-bold uppercase tracking-wide">Email</FormLabel>
+                      <FormLabel className="text-xs font-bold uppercase tracking-wide">Email</FormLabel>
                       <FormControl>
                         <Input type="email" placeholder="john@example.com" {...field} />
                       </FormControl>
@@ -167,7 +211,7 @@ export default function Contact() {
                   name="subject"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-bold uppercase tracking-wide">Subject</FormLabel>
+                      <FormLabel className="text-xs font-bold uppercase tracking-wide">Subject</FormLabel>
                       <FormControl>
                         <Input placeholder="General Inquiry" {...field} />
                       </FormControl>
@@ -181,9 +225,13 @@ export default function Contact() {
                   name="message"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-sm font-bold uppercase tracking-wide">Message</FormLabel>
+                      <FormLabel className="text-xs font-bold uppercase tracking-wide">Message</FormLabel>
                       <FormControl>
-                        <Textarea placeholder="How can we help you?" className="min-h-[150px]" {...field} />
+                        <Textarea
+                          placeholder="How can we help you?"
+                          className="min-h-[140px] resize-none"
+                          {...field}
+                        />
                       </FormControl>
                       <FormMessage />
                     </FormItem>
@@ -193,7 +241,7 @@ export default function Contact() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-bold uppercase tracking-widest py-6 disabled:opacity-50"
+                  className="w-full bg-primary text-primary-foreground hover:bg-accent hover:text-accent-foreground font-bold uppercase tracking-widest py-5 transition-colors duration-200 disabled:opacity-50 cursor-pointer"
                 >
                   {isSubmitting ? "Sending..." : "Send Message"}
                 </Button>

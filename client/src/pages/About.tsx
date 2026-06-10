@@ -12,7 +12,7 @@ export default function About() {
           <img src={hero3} alt="Background" className="w-full h-full object-cover opacity-50" />
         </div>
         <div className="container mx-auto px-4 relative z-20 text-center">
-          <h1 className="text-6xl md:text-8xl font-heading font-black text-white uppercase italic tracking-tighter mb-4">
+          <h1 className="text-6xl md:text-8xl font-heading font-black text-white uppercase tracking-tighter mb-4">
             About <span className="text-accent">Us</span>
           </h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto font-medium">
@@ -30,7 +30,7 @@ export default function About() {
             transition={{ duration: 0.6 }}
           >
             <span className="text-accent font-bold tracking-widest uppercase mb-2 block">Our Story</span>
-            <h2 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6 uppercase italic">
+            <h2 className="text-4xl md:text-5xl font-heading font-bold text-primary mb-6 uppercase">
               From Streets to Global Ambitions
             </h2>
             <div className="space-y-6 text-muted-foreground text-lg leading-relaxed">
@@ -58,7 +58,7 @@ export default function About() {
             </div>
             <div className="bg-muted p-8 text-center rounded-sm hover:shadow-lg transition-shadow">
               <Users className="w-12 h-12 text-accent mx-auto mb-4" />
-              <h3 className="font-heading text-4xl font-bold text-primary">40+</h3>
+              <h3 className="font-heading text-4xl font-bold text-primary">70+</h3>
               <p className="text-sm uppercase tracking-wide font-bold text-muted-foreground">Active Players</p>
             </div>
             <div className="bg-muted p-8 text-center rounded-sm hover:shadow-lg transition-shadow">
