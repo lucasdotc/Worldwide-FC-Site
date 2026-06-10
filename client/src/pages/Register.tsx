@@ -76,7 +76,7 @@ export default function Register() {
       body: formData,
     });
 
-    if (!res.ok) throw new Error("Backend failed");
+    //if (!res.ok) throw new Error("Backend failed");
 
     setSubmittedName(values.fullName);
     setSubmitted(true);
