@@ -14,14 +14,8 @@ import {
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import emailjs from "@emailjs/browser";
 import { X } from "lucide-react";
 import { useState } from 'react';
-
-const EMAILJS_SERVICE_ID = "service_i4ltsyg";
-//const EMAILJS_SERVICE_ID = "service_l4fecgr";
-const EMAILJS_TEMPLATE_ID = "template_ekhogck";
-const EMAILJS_PUBLIC_KEY = "hayhFKcuW2xaQ3XuG";
 
 
 
@@ -83,20 +77,7 @@ export default function Register() {
     });
 
     if (!res.ok) throw new Error("Backend failed");
-    
-    emailjs.send(
-      EMAILJS_SERVICE_ID,
-      EMAILJS_TEMPLATE_ID,
-      {
-        fullName: values.fullName,
-        email: values.email,
-        phone: values.phone,
-        dob: values.dob,
-        position: values.position,
-        experience: values.experience || "N/A",
-      },
-      EMAILJS_PUBLIC_KEY
-    );
+
     setSubmittedName(values.fullName);
     setSubmitted(true);
     form.reset();

@@ -1,0 +1,10 @@
+{
+  "name": "worldwide-fc-register-lambda",
+  "version": "1.0.0",
+  "description": "Registration Lambda — Google Sheets + Drive + SES confirmation email",
+  "main": "index.js",
+  "dependencies": {
+    "busboy": "^1.6.0",
+    "googleapis": "^144.0.0"
+  }
+}

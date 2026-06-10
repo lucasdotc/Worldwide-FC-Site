@@ -1,0 +1,7 @@
+{
+  "name": "worldwide-fc-contact-lambda",
+  "version": "1.0.0",
+  "description": "Contact form Lambda — sends email via AWS SES SDK (no bundling needed)",
+  "main": "index.js",
+  "dependencies": {}
+}

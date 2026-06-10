@@ -4,3 +4,17 @@ dist
 server/public
 vite.config.ts.*
 *.tar.gz
+.agent
+.claude
+.codebuddy
+.codex
+.continue
+.cursor
+.gemini
+.github
+.kiro
+.opencode
+.qoder
+.roo
+.trae
+.windsurf
