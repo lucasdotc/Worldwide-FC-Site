@@ -14,7 +14,6 @@ import {
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Textarea } from "@/components/ui/textarea";
-import { useToast } from "@/hooks/use-toast";
 import emailjs from "@emailjs/browser";
 import { X } from "lucide-react";
 import { useState } from 'react';
@@ -46,7 +45,8 @@ const formSchema = z.object({
 
 export default function Register() {
   const [experienceFiles, setExperienceFiles] = useState<File[]>([]);
-  const { toast } = useToast();
+  const [submitted, setSubmitted] = useState(false);
+  const [submittedName, setSubmittedName] = useState("");
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -97,11 +97,45 @@ export default function Register() {
       },
       EMAILJS_PUBLIC_KEY
     );
-    toast({
-      title: "Registration Submitted!",
-      description: "We've received your details. A coach will contact you shortly.",
-    });
+    setSubmittedName(values.fullName);
+    setSubmitted(true);
     form.reset();
+  }
+
+  if (submitted) {
+    return (
+      <div className="min-h-screen bg-background">
+        <div className="bg-primary py-16 text-center">
+          <h1 className="text-5xl md:text-7xl font-heading font-black text-white uppercase tracking-tighter">
+            Join the <span className="text-accent">Squad</span>
+          </h1>
+        </div>
+        <div className="container mx-auto px-4 py-24 max-w-2xl text-center">
+          <div className="bg-white border border-border shadow-lg p-12">
+            <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-6">
+              <svg className="w-8 h-8 text-accent" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h2 className="text-3xl font-heading font-bold text-primary uppercase mb-3">
+              Request Received!
+            </h2>
+            <p className="text-muted-foreground text-lg mb-2">
+              Thanks, <span className="font-semibold text-foreground">{submittedName}</span>!
+            </p>
+            <p className="text-muted-foreground mb-8">
+              We've received your registration request. Our coaching staff will review your application and reach out to you shortly.
+            </p>
+            <a
+              href="/"
+              className="inline-block bg-primary text-primary-foreground font-heading font-bold uppercase tracking-widest px-8 py-3 hover:bg-accent hover:text-accent-foreground transition-colors duration-200 cursor-pointer"
+            >
+              Back to Home
+            </a>
+          </div>
+        </div>
+      </div>
+    );
   }
 
   return (
@@ -110,7 +144,7 @@ export default function Register() {
         <h1 className="text-5xl md:text-7xl font-heading font-black text-white uppercase tracking-tighter">
           Join the <span className="text-accent">Squad</span>
         </h1>
-        
+
       </div>
 
       <div className="container mx-auto px-4 py-16 max-w-2xl">
